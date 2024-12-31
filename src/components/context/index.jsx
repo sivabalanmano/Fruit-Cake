@@ -9,7 +9,6 @@ export default function GlobalState({ children }) {
   const [recipeDetailsData, setRecipeDetailsData] = useState(null);
   const [favorites, setFavorites] = useState([]);
   const [homeData,setHomeData]=useState('')
-  const [status,setStatus]=useState(true)
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
@@ -40,12 +39,6 @@ export default function GlobalState({ children }) {
       cpyFavoritesList.splice(index)
     }
     setFavorites(cpyFavoritesList)
-    if(status){
-      setStatus(false)
-    }else{
-      setStatus(true)
-    }
-    console.log(status)
     
   }
   return (
@@ -62,8 +55,7 @@ export default function GlobalState({ children }) {
         favorites,
         setFavorites,
         handleAddFavorites,
-        homeData,setHomeData,
-        status
+        homeData,setHomeData
       }}
     >
       {children}

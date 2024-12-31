@@ -8,7 +8,6 @@ const Details = () => {
     recipeDetailsData,
     setRecipeDetailsData,
     favorites,
-    status,
     handleAddFavorites,
   } = useContext(GlobalContext);
   useEffect(() => {
